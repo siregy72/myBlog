@@ -14,6 +14,9 @@ app.set("views", "./views");
 
 app.use(express.static("public"));
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use("/", require("./routes/main"));
 app.use("/", require("./routes/admin"));
 
