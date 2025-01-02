@@ -10,11 +10,13 @@
       <section class="articles">
         <h2 class="articles-heading">최근 게시물</h2>
         <ul class="article-ul">
+            <% data.forEach( post => { %>
             <li>
-              <a href="#">
-                <span>Title 1</span>
-                <span class="article-list-date">2023.01.01</span>
+              <a href="/post/<%= post.id %>" class="article-link">
+                <span><%= post.title %></span>
+                <span class="article-list-date"><%= post.createdAt.toDateString() %></span>
               </a>
             </li>
+            <% }) %>
         </ul>
       </section>
