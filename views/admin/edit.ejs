@@ -1,0 +1,17 @@
+<a href="#">&larr; 뒤로</a>
+<div class="admin-title"></div>
+<h2><%= locals.title %></h2>
+<form action="/delete/<%= data._id %>?_method=delete" method="post">
+    <input type="submit" value="삭제" class="btn btn-delete">
+</form>
+</div>
+
+<form action="/edit/<%= data._id %>?_method=put" method="post">
+    <label for="title">제목</label>
+    <input type="text" name="title" id="title" placeholder="제목" value="<%= data.title %>" required>
+
+    <label for="body">내용</label>
+    <textarea name="body" id="body" cols="50" rows="10" placeholder="내용" required><%= data.body %></textarea>
+
+    <button type="submit">게시물 수정</button>
+</form>
